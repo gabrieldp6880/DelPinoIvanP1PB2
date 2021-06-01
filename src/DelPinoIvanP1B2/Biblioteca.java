@@ -6,15 +6,34 @@ public class Biblioteca {
 	
 	private String nombre;
 	private Prestamo prestamo;
-	private ArrayList <Libro> librosPrestados;
+	private ArrayList <Prestamo> listaPrestamos;
 	
 	public Biblioteca (String n) {
 		this.nombre=n;
-		librosPrestados = new ArrayList<Libro>();
+		listaPrestamos = new ArrayList<Prestamo>();
 	}
 	
-	public void registrarLibroPrestado(Libro l) {
-		librosPrestados.add(l);
+	public void disponibilizaLibro (Libro l) {
+		l.setEstado(true);
 	}
+	
+	public boolean hacerPrestamo (Integer id, Estudiante e, Libro l) {
+		if(e.getLibrosAdquiridos().size() < 2 && l.getEstado()==true) {
+			Prestamo pres = new Prestamo (id,e,l);
+			listaPrestamos.add(pres);
+			e.getLibrosAdquiridos().add(l);
+			return true;
+		}
+		return false;
+	}
+	
+	public String imprimirLibroHistoria (Historia l) {
+		return l.fotocopiar();
+	}
+	
+	public String imprimirLibroGeografia (Geografia l) {
+		return l.fotocopiar();
+	}
+	
 	
 }

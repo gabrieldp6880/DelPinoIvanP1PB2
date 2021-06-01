@@ -12,8 +12,6 @@ public class Prestamo {
 		this.libro=l;
 	}
 	
-	
-	
 	public Integer getIdentificador() {
 		return identificador;
 	}
