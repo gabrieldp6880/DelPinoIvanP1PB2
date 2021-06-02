@@ -10,7 +10,7 @@ public class Historia extends Libro implements IFotocopiable {
 
 	@Override
 	public String fotocopiar() {
-		return this.getClass().getName();
+		return this.getClass().getSimpleName();
 	}
 
 }

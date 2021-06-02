@@ -22,6 +22,7 @@ public class Biblioteca {
 			Prestamo pres = new Prestamo (id,e,l);
 			listaPrestamos.add(pres);
 			e.getLibrosAdquiridos().add(l);
+			l.setEstado(false);
 			return true;
 		}
 		return false;
@@ -33,6 +34,14 @@ public class Biblioteca {
 	
 	public String imprimirLibroGeografia (Geografia l) {
 		return l.fotocopiar();
+	}
+
+	public ArrayList<Prestamo> getListaPrestamos() {
+		return listaPrestamos;
+	}
+
+	public void setListaPrestamos(ArrayList<Prestamo> listaPrestamos) {
+		this.listaPrestamos = listaPrestamos;
 	}
 	
 	
