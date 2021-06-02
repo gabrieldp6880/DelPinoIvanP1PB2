@@ -67,4 +67,21 @@ public class test {
 		
 	}
 	
+	@Test
+	public void queNoSePuedaPrestarMasDe2LibrosEstudiante (){
+		Biblioteca b1 = new Biblioteca ("Biblioteca Nacional");
+		Libro l1 = new Libro (341, "Libro de Matematica", "Newton");
+		Geografia l2 = new Geografia (342, "Libro de geografia", "Colon");
+		Historia l3 = new Historia (343, "Libro de historia", "San Martin");
+		
+		Estudiante ivan = new Estudiante (36987321, "Del Pino", "Ivan");
+		
+		b1.hacerPrestamo(1234, ivan, l1);
+		b1.hacerPrestamo(342, ivan, l2);
+		
+		
+		assertFalse(b1.hacerPrestamo(343, ivan, l3));
+		
+	}
+	
 }
