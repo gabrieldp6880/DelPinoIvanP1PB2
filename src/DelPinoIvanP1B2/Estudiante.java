@@ -13,7 +13,7 @@ public class Estudiante {
 		this.dni=dni;
 		this.apellido=a;
 		this.nombre=n;
-		setLibrosAdquiridos(new ArrayList <Libro>());
+		librosAdquiridos = new ArrayList <Libro>();
 	}
 	
 	public void devolverLibro (Biblioteca b, Libro l) {
